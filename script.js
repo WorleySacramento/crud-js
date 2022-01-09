@@ -3,7 +3,7 @@ window.addEventListener('load',start);
 //Declarando as Variáveis Globais
 var globalNames = ['Um', 'Dois', 'Três'];
 var nomes =document.querySelector('#nomes');
-var ul =document.createElement('ul');
+var tr =document.createElement('tr');
 var input =document.getElementById('input');
 var form =document.getElementById('formulario');
 var isEditing = false;
@@ -50,20 +50,20 @@ function capturarValorDigitado(Objeto) {
   
 function exibirVetor() {
     // Limpando conteudo da ul e input para receber novos valores
-    ul.innerHTML = '';
+    tr.innerHTML = '';
     input.value = '';
   
     // Para cada posição do vetor, executar a função PercorrerVetor
     globalNames.forEach(percorrerVetor);
-    nomes.appendChild(ul); // Adicionar ul na div nomes para ser exibida no site
+    nomes.appendChild(tr); // Adicionar ul na div nomes para ser exibida no site
 }
   
 function percorrerVetor(item) {
-    var li = document.createElement('li');
+    var td = document.createElement('td');
   
-    li.appendChild(criarBotao()); // Cria e adiciona o botão x na li
-    li.appendChild(criarSpan(item)); // Cria e adiciona o span na li
-    ul.appendChild(li); // Adicionando li na ul
+    td.appendChild(criarBotao()); // Cria e adiciona o botão x natd
+    td.appendChild(criarSpan(item)); // Cria e adiciona o span na li
+    tr.appendChild(td); // Adicionando li na ul
 }
   
 function criarBotao() {
@@ -97,7 +97,7 @@ function editarItem(event) {
  }
   
   // Deletando elementos da lista que forem clicados
- ul.addEventListener('click', function (event) {
+ tr.addEventListener('click', function (event) {
     // Realizar evento apenas quando o usário clicar no botão
     if (event.target.localName === 'button') {
       // Capturando valor do elemento clicado

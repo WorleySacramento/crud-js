@@ -61,7 +61,7 @@ function exibirVetor() {
 function percorrerVetor(item) {
     var td = document.createElement('td');
   
-    td.appendChild(criarBotao()); // Cria e adiciona o botão x natd
+    td.appendChild(criarBotao()); // Cria e adiciona o botão x na td
     td.appendChild(criarSpan(item)); // Cria e adiciona o span na li
     tr.appendChild(td); // Adicionando li na ul
 }
@@ -98,7 +98,7 @@ function editarItem(event) {
   
   // Deletando elementos da lista que forem clicados
  tr.addEventListener('click', function (event) {
-    // Realizar evento apenas quando o usário clicar no botão
+    // Realizar evento apenas quando o usuário clicar no botão
     if (event.target.localName === 'button') {
       // Capturando valor do elemento clicado
       var valor = event.srcElement.nextElementSibling.innerHTML;

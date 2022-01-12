@@ -1,16 +1,16 @@
-var mysql = require('mysql');
+var mysql = require('mysql2');
 
 var con = mysql.createConnection({
   host: "localhost",
-  user: "yourusername",
-  password: "yourpassword",
-  database: "dbcrud"
+  user: "root",
+  password: "",
+  database: "crud_db"
 });
 
 con.connect(function(err) {
   if (err) throw err;
   console.log("Connected!");
-  con.query("CREATE DATABASE cruddb", function (err, result) {
+  con.query("CREATE DATABASE crud_db", function (err, result) {
     if (err) throw err;
     console.log("Database created");
   });
